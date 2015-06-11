@@ -40,6 +40,7 @@
 		93590A3E1B2937C70031A146 /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		93590A3F1B2937C70031A146 /* AppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		93590A401B2937C70031A146 /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		93590A431B2939C90031A146 /* PrefixHeader.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = PrefixHeader.pch; path = ../PrefixHeader.pch; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -85,7 +86,6 @@
 				93590A1E1B29369C0031A146 /* ViewController.h */,
 				93590A1F1B29369C0031A146 /* ViewController.m */,
 				93590A211B29369D0031A146 /* Main.storyboard */,
-				93590A241B29369D0031A146 /* Images.xcassets */,
 				93590A261B29369D0031A146 /* LaunchScreen.xib */,
 				93590A171B29369C0031A146 /* Supporting Files */,
 			);
@@ -95,6 +95,8 @@
 		93590A171B29369C0031A146 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				93590A431B2939C90031A146 /* PrefixHeader.pch */,
+				93590A241B29369D0031A146 /* Images.xcassets */,
 				93590A181B29369C0031A146 /* Info.plist */,
 			);
 			name = "Supporting Files";
