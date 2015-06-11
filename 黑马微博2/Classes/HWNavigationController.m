@@ -25,9 +25,11 @@
 }
 
 -(void)pushViewController:(UIViewController *)viewController animated:(BOOL)animated
-{
+{//需要判断不是根视图控制器的才添加左右按钮
     
     [super pushViewController:viewController animated:animated];
+    if(self.viewControllers.count>1)//判断大于第一层（根视图控制器）
+    {
     UIButton* back=[UIButton buttonWithType:UIButtonTypeCustom];//创建一个自定义的按钮
     [back addTarget:self action:@selector(toBack:) forControlEvents:UIControlEventTouchUpInside];
     [back setBackgroundImage:[UIImage imageNamed:@"1"] forState:UIControlStateNormal];
@@ -41,6 +43,7 @@
     [home setBackgroundImage:[UIImage imageNamed:@"4"] forState:UIControlStateHighlighted];
     home.size=home.currentBackgroundImage.size;//如果没有正常显示，请查看有没有设置大小
     viewController.navigationItem.rightBarButtonItem=[[UIBarButtonItem alloc]initWithCustomView:home];
+    }
 }
 
 -(void)toBack:(id)sender
