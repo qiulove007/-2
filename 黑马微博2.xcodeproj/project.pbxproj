@@ -14,6 +14,11 @@
 		93590A341B29369D0031A146 /* ____2Tests.m in Sources */ = {isa = PBXBuildFile; fileRef = 93590A331B29369D0031A146 /* ____2Tests.m */; };
 		93590A411B2937C70031A146 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 93590A3F1B2937C70031A146 /* AppDelegate.m */; };
 		93590A421B2937C70031A146 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 93590A401B2937C70031A146 /* main.m */; };
+		93590A601B29707C0031A146 /* HWHomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 93590A5F1B29707C0031A146 /* HWHomeViewController.m */; };
+		93590A631B2970A10031A146 /* HWMessageCenterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 93590A621B2970A10031A146 /* HWMessageCenterViewController.m */; };
+		93590A661B2970C90031A146 /* HWDiscoverViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 93590A651B2970C90031A146 /* HWDiscoverViewController.m */; };
+		93590A691B2970F50031A146 /* HWProfileViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 93590A681B2970F50031A146 /* HWProfileViewController.m */; };
+		93590A6C1B2977F00031A146 /* HWTabBarViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 93590A6B1B2977F00031A146 /* HWTabBarViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -41,6 +46,16 @@
 		93590A3F1B2937C70031A146 /* AppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		93590A401B2937C70031A146 /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		93590A431B2939C90031A146 /* PrefixHeader.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = PrefixHeader.pch; path = ../PrefixHeader.pch; sourceTree = "<group>"; };
+		93590A5E1B29707C0031A146 /* HWHomeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HWHomeViewController.h; sourceTree = "<group>"; };
+		93590A5F1B29707C0031A146 /* HWHomeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HWHomeViewController.m; sourceTree = "<group>"; };
+		93590A611B2970A10031A146 /* HWMessageCenterViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HWMessageCenterViewController.h; sourceTree = "<group>"; };
+		93590A621B2970A10031A146 /* HWMessageCenterViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HWMessageCenterViewController.m; sourceTree = "<group>"; };
+		93590A641B2970C90031A146 /* HWDiscoverViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HWDiscoverViewController.h; sourceTree = "<group>"; };
+		93590A651B2970C90031A146 /* HWDiscoverViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HWDiscoverViewController.m; sourceTree = "<group>"; };
+		93590A671B2970F50031A146 /* HWProfileViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HWProfileViewController.h; sourceTree = "<group>"; };
+		93590A681B2970F50031A146 /* HWProfileViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HWProfileViewController.m; sourceTree = "<group>"; };
+		93590A6A1B2977F00031A146 /* HWTabBarViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HWTabBarViewController.h; sourceTree = "<group>"; };
+		93590A6B1B2977F00031A146 /* HWTabBarViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HWTabBarViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -125,6 +140,16 @@
 				93590A3E1B2937C70031A146 /* AppDelegate.h */,
 				93590A3F1B2937C70031A146 /* AppDelegate.m */,
 				93590A401B2937C70031A146 /* main.m */,
+				93590A5E1B29707C0031A146 /* HWHomeViewController.h */,
+				93590A5F1B29707C0031A146 /* HWHomeViewController.m */,
+				93590A611B2970A10031A146 /* HWMessageCenterViewController.h */,
+				93590A621B2970A10031A146 /* HWMessageCenterViewController.m */,
+				93590A641B2970C90031A146 /* HWDiscoverViewController.h */,
+				93590A651B2970C90031A146 /* HWDiscoverViewController.m */,
+				93590A671B2970F50031A146 /* HWProfileViewController.h */,
+				93590A681B2970F50031A146 /* HWProfileViewController.m */,
+				93590A6A1B2977F00031A146 /* HWTabBarViewController.h */,
+				93590A6B1B2977F00031A146 /* HWTabBarViewController.m */,
 			);
 			path = Classes;
 			sourceTree = "<group>";
@@ -229,8 +254,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				93590A631B2970A10031A146 /* HWMessageCenterViewController.m in Sources */,
+				93590A601B29707C0031A146 /* HWHomeViewController.m in Sources */,
+				93590A691B2970F50031A146 /* HWProfileViewController.m in Sources */,
 				93590A421B2937C70031A146 /* main.m in Sources */,
 				93590A411B2937C70031A146 /* AppDelegate.m in Sources */,
+				93590A6C1B2977F00031A146 /* HWTabBarViewController.m in Sources */,
+				93590A661B2970C90031A146 /* HWDiscoverViewController.m in Sources */,
 				93590A201B29369C0031A146 /* ViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
