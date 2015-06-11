@@ -17,7 +17,8 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
-    
+    self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc]initWithTitle:@"特殊" style:(0) target:nil action:nil];
+    //特殊的页面导航按钮可能会不一样，所以在特定页面自己去添加设置就可以了，如果不要就是给nil
 }
 
 
