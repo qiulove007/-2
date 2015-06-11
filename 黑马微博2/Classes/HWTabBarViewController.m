@@ -7,6 +7,7 @@
 //
 
 #import "HWTabBarViewController.h"
+#import "HWNavigationController.h"
 
 @interface HWTabBarViewController ()
 
@@ -61,7 +62,7 @@
     //注意：如果直接给一张图片会被渲染成默认的颜色，所以要设置为不要被渲染的模式
     //即imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal
     
-    UINavigationController* nav=[[UINavigationController alloc] initWithRootViewController:childVc];
+    HWNavigationController* nav=[[HWNavigationController alloc] initWithRootViewController:childVc];
     
     [self addChildViewController:nav];
 }
