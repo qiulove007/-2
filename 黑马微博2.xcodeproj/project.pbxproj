@@ -19,6 +19,11 @@
 		93590A661B2970C90031A146 /* HWDiscoverViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 93590A651B2970C90031A146 /* HWDiscoverViewController.m */; };
 		93590A691B2970F50031A146 /* HWProfileViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 93590A681B2970F50031A146 /* HWProfileViewController.m */; };
 		93590A6C1B2977F00031A146 /* HWTabBarViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 93590A6B1B2977F00031A146 /* HWTabBarViewController.m */; };
+		93590A701B29BAAE0031A146 /* HWTestViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 93590A6E1B29BAAE0031A146 /* HWTestViewController.m */; };
+		93590A711B29BAAE0031A146 /* HWTestViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 93590A6F1B29BAAE0031A146 /* HWTestViewController.xib */; };
+		93590A751B29BDAB0031A146 /* HWTest2ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 93590A731B29BDAB0031A146 /* HWTest2ViewController.m */; };
+		93590A761B29BDAB0031A146 /* HWTest2ViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 93590A741B29BDAB0031A146 /* HWTest2ViewController.xib */; };
+		93590A7C1B29C7D60031A146 /* Extension.m in Sources */ = {isa = PBXBuildFile; fileRef = 93590A7B1B29C7D60031A146 /* Extension.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -56,6 +61,14 @@
 		93590A681B2970F50031A146 /* HWProfileViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HWProfileViewController.m; sourceTree = "<group>"; };
 		93590A6A1B2977F00031A146 /* HWTabBarViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HWTabBarViewController.h; sourceTree = "<group>"; };
 		93590A6B1B2977F00031A146 /* HWTabBarViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HWTabBarViewController.m; sourceTree = "<group>"; };
+		93590A6D1B29BAAE0031A146 /* HWTestViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HWTestViewController.h; sourceTree = "<group>"; };
+		93590A6E1B29BAAE0031A146 /* HWTestViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HWTestViewController.m; sourceTree = "<group>"; };
+		93590A6F1B29BAAE0031A146 /* HWTestViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = HWTestViewController.xib; sourceTree = "<group>"; };
+		93590A721B29BDAB0031A146 /* HWTest2ViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HWTest2ViewController.h; sourceTree = "<group>"; };
+		93590A731B29BDAB0031A146 /* HWTest2ViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HWTest2ViewController.m; sourceTree = "<group>"; };
+		93590A741B29BDAB0031A146 /* HWTest2ViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = HWTest2ViewController.xib; sourceTree = "<group>"; };
+		93590A7A1B29C7D60031A146 /* Extension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Extension.h; sourceTree = "<group>"; };
+		93590A7B1B29C7D60031A146 /* Extension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Extension.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -97,6 +110,7 @@
 		93590A161B29369C0031A146 /* 黑马微博2 */ = {
 			isa = PBXGroup;
 			children = (
+				93590A431B2939C90031A146 /* PrefixHeader.pch */,
 				93590A3D1B2937C70031A146 /* Classes */,
 				93590A1E1B29369C0031A146 /* ViewController.h */,
 				93590A1F1B29369C0031A146 /* ViewController.m */,
@@ -110,7 +124,6 @@
 		93590A171B29369C0031A146 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				93590A431B2939C90031A146 /* PrefixHeader.pch */,
 				93590A241B29369D0031A146 /* Images.xcassets */,
 				93590A181B29369C0031A146 /* Info.plist */,
 			);
@@ -150,6 +163,14 @@
 				93590A681B2970F50031A146 /* HWProfileViewController.m */,
 				93590A6A1B2977F00031A146 /* HWTabBarViewController.h */,
 				93590A6B1B2977F00031A146 /* HWTabBarViewController.m */,
+				93590A6D1B29BAAE0031A146 /* HWTestViewController.h */,
+				93590A6E1B29BAAE0031A146 /* HWTestViewController.m */,
+				93590A6F1B29BAAE0031A146 /* HWTestViewController.xib */,
+				93590A721B29BDAB0031A146 /* HWTest2ViewController.h */,
+				93590A731B29BDAB0031A146 /* HWTest2ViewController.m */,
+				93590A741B29BDAB0031A146 /* HWTest2ViewController.xib */,
+				93590A7A1B29C7D60031A146 /* Extension.h */,
+				93590A7B1B29C7D60031A146 /* Extension.m */,
 			);
 			path = Classes;
 			sourceTree = "<group>";
@@ -234,9 +255,11 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				93590A761B29BDAB0031A146 /* HWTest2ViewController.xib in Resources */,
 				93590A231B29369D0031A146 /* Main.storyboard in Resources */,
 				93590A281B29369D0031A146 /* LaunchScreen.xib in Resources */,
 				93590A251B29369D0031A146 /* Images.xcassets in Resources */,
+				93590A711B29BAAE0031A146 /* HWTestViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -255,12 +278,15 @@
 			buildActionMask = 2147483647;
 			files = (
 				93590A631B2970A10031A146 /* HWMessageCenterViewController.m in Sources */,
+				93590A7C1B29C7D60031A146 /* Extension.m in Sources */,
 				93590A601B29707C0031A146 /* HWHomeViewController.m in Sources */,
 				93590A691B2970F50031A146 /* HWProfileViewController.m in Sources */,
 				93590A421B2937C70031A146 /* main.m in Sources */,
 				93590A411B2937C70031A146 /* AppDelegate.m in Sources */,
 				93590A6C1B2977F00031A146 /* HWTabBarViewController.m in Sources */,
 				93590A661B2970C90031A146 /* HWDiscoverViewController.m in Sources */,
+				93590A701B29BAAE0031A146 /* HWTestViewController.m in Sources */,
+				93590A751B29BDAB0031A146 /* HWTest2ViewController.m in Sources */,
 				93590A201B29369C0031A146 /* ViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -383,6 +409,9 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				GCC_ENABLE_BUILTIN_FUNCTIONS = YES;
+				GCC_PRECOMPILE_PREFIX_HEADER = NO;
+				GCC_PREFIX_HEADER = "$(SRCROOT)/PrefixHeader.pch";
 				INFOPLIST_FILE = "黑马微博2/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -393,6 +422,9 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				GCC_ENABLE_BUILTIN_FUNCTIONS = YES;
+				GCC_PRECOMPILE_PREFIX_HEADER = NO;
+				GCC_PREFIX_HEADER = "$(SRCROOT)/PrefixHeader.pch";
 				INFOPLIST_FILE = "黑马微博2/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
