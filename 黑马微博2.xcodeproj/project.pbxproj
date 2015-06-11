@@ -24,6 +24,7 @@
 		93590A751B29BDAB0031A146 /* HWTest2ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 93590A731B29BDAB0031A146 /* HWTest2ViewController.m */; };
 		93590A761B29BDAB0031A146 /* HWTest2ViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 93590A741B29BDAB0031A146 /* HWTest2ViewController.xib */; };
 		93590A7C1B29C7D60031A146 /* Extension.m in Sources */ = {isa = PBXBuildFile; fileRef = 93590A7B1B29C7D60031A146 /* Extension.m */; };
+		93590A7F1B29D7540031A146 /* HWNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 93590A7E1B29D7540031A146 /* HWNavigationController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -69,6 +70,8 @@
 		93590A741B29BDAB0031A146 /* HWTest2ViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = HWTest2ViewController.xib; sourceTree = "<group>"; };
 		93590A7A1B29C7D60031A146 /* Extension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Extension.h; sourceTree = "<group>"; };
 		93590A7B1B29C7D60031A146 /* Extension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Extension.m; sourceTree = "<group>"; };
+		93590A7D1B29D7540031A146 /* HWNavigationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HWNavigationController.h; sourceTree = "<group>"; };
+		93590A7E1B29D7540031A146 /* HWNavigationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HWNavigationController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -171,6 +174,8 @@
 				93590A741B29BDAB0031A146 /* HWTest2ViewController.xib */,
 				93590A7A1B29C7D60031A146 /* Extension.h */,
 				93590A7B1B29C7D60031A146 /* Extension.m */,
+				93590A7D1B29D7540031A146 /* HWNavigationController.h */,
+				93590A7E1B29D7540031A146 /* HWNavigationController.m */,
 			);
 			path = Classes;
 			sourceTree = "<group>";
@@ -287,6 +292,7 @@
 				93590A661B2970C90031A146 /* HWDiscoverViewController.m in Sources */,
 				93590A701B29BAAE0031A146 /* HWTestViewController.m in Sources */,
 				93590A751B29BDAB0031A146 /* HWTest2ViewController.m in Sources */,
+				93590A7F1B29D7540031A146 /* HWNavigationController.m in Sources */,
 				93590A201B29369C0031A146 /* ViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
