@@ -7,6 +7,7 @@
 //
 
 #import "HWTestViewController.h"
+#import "HWTest2ViewController.h"
 
 @interface HWTestViewController ()
 
@@ -22,6 +23,14 @@
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+
+-(void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event
+{
+    HWTest2ViewController* test2=[[HWTest2ViewController alloc]init];
+    test2.title=@"测试控制器2";
+    
+    [self.navigationController pushViewController:test2 animated:YES];
 }
 
 /*
