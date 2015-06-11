@@ -7,6 +7,7 @@
 //
 
 #import "HWMessageCenterViewController.h"
+#import "HWTestViewController.h"
 
 @interface HWMessageCenterViewController ()
 
@@ -24,23 +25,43 @@
     // self.navigationItem.rightBarButtonItem = self.editButtonItem;
 }
 
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
-}
-
 #pragma mark - Table view data source
 
-- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
-#warning Potentially incomplete method implementation.
+/*- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
+
     // Return the number of sections.
     return 0;
-}
+}*/
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-#warning Incomplete method implementation.
+
     // Return the number of rows in the section.
-    return 0;
+    return 20;
+}
+
+-(UITableViewCell*) tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    static NSString* myId=@"cell";
+    UITableViewCell* cell=[tableView dequeueReusableCellWithIdentifier:myId];
+    if(!cell)
+    {
+        cell=[[UITableViewCell alloc]initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:myId];
+    }
+    
+    cell.textLabel.text=[NSString stringWithFormat:@"test-message-%d",indexPath.row];
+    
+    return cell;
+}
+
+
+#pragma mark - 代理方法
+-(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    HWTestViewController* test1=[[HWTestViewController alloc]init];
+    test1.title=@"测试控制器1";
+    
+    test1.hidesBottomBarWhenPushed = YES;//当test1被push的时候，隐藏tabbar
+    [self.navigationController pushViewController:test1 animated:YES];
 }
 
 /*
