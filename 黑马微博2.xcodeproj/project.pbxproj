@@ -7,13 +7,13 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		93590A1A1B29369C0031A146 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 93590A191B29369C0031A146 /* main.m */; };
-		93590A1D1B29369C0031A146 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 93590A1C1B29369C0031A146 /* AppDelegate.m */; };
 		93590A201B29369C0031A146 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 93590A1F1B29369C0031A146 /* ViewController.m */; };
 		93590A231B29369D0031A146 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 93590A211B29369D0031A146 /* Main.storyboard */; };
 		93590A251B29369D0031A146 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 93590A241B29369D0031A146 /* Images.xcassets */; };
 		93590A281B29369D0031A146 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 93590A261B29369D0031A146 /* LaunchScreen.xib */; };
 		93590A341B29369D0031A146 /* ____2Tests.m in Sources */ = {isa = PBXBuildFile; fileRef = 93590A331B29369D0031A146 /* ____2Tests.m */; };
+		93590A411B2937C70031A146 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 93590A3F1B2937C70031A146 /* AppDelegate.m */; };
+		93590A421B2937C70031A146 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 93590A401B2937C70031A146 /* main.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -29,9 +29,6 @@
 /* Begin PBXFileReference section */
 		93590A141B29369C0031A146 /* 黑马微博2.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "黑马微博2.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		93590A181B29369C0031A146 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		93590A191B29369C0031A146 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
-		93590A1B1B29369C0031A146 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
-		93590A1C1B29369C0031A146 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		93590A1E1B29369C0031A146 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
 		93590A1F1B29369C0031A146 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
 		93590A221B29369D0031A146 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -40,6 +37,9 @@
 		93590A2D1B29369D0031A146 /* 黑马微博2Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "黑马微博2Tests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		93590A321B29369D0031A146 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		93590A331B29369D0031A146 /* ____2Tests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "____2Tests.m"; sourceTree = "<group>"; };
+		93590A3E1B2937C70031A146 /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		93590A3F1B2937C70031A146 /* AppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		93590A401B2937C70031A146 /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -81,8 +81,7 @@
 		93590A161B29369C0031A146 /* 黑马微博2 */ = {
 			isa = PBXGroup;
 			children = (
-				93590A1B1B29369C0031A146 /* AppDelegate.h */,
-				93590A1C1B29369C0031A146 /* AppDelegate.m */,
+				93590A3D1B2937C70031A146 /* Classes */,
 				93590A1E1B29369C0031A146 /* ViewController.h */,
 				93590A1F1B29369C0031A146 /* ViewController.m */,
 				93590A211B29369D0031A146 /* Main.storyboard */,
@@ -97,7 +96,6 @@
 			isa = PBXGroup;
 			children = (
 				93590A181B29369C0031A146 /* Info.plist */,
-				93590A191B29369C0031A146 /* main.m */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -117,6 +115,16 @@
 				93590A321B29369D0031A146 /* Info.plist */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		93590A3D1B2937C70031A146 /* Classes */ = {
+			isa = PBXGroup;
+			children = (
+				93590A3E1B2937C70031A146 /* AppDelegate.h */,
+				93590A3F1B2937C70031A146 /* AppDelegate.m */,
+				93590A401B2937C70031A146 /* main.m */,
+			);
+			path = Classes;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -219,9 +227,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				93590A421B2937C70031A146 /* main.m in Sources */,
+				93590A411B2937C70031A146 /* AppDelegate.m in Sources */,
 				93590A201B29369C0031A146 /* ViewController.m in Sources */,
-				93590A1D1B29369C0031A146 /* AppDelegate.m in Sources */,
-				93590A1A1B29369C0031A146 /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
