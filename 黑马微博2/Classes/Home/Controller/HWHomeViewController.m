@@ -17,9 +17,9 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    self.navigationItem.leftBarButtonItem = [HWItemTool itemWithTarget:self Action:@selector(toFriend) image:@"5" highImage:@"6"];
+    self.navigationItem.leftBarButtonItem = [UIBarButtonItem itemWithTarget:self Action:@selector(toFriend) image:@"5" highImage:@"6"];
     
-    self.navigationItem.rightBarButtonItem = [HWItemTool itemWithTarget:self Action:@selector(toPop) image:@"d_nu" highImage:@"1"];
+    self.navigationItem.rightBarButtonItem = [UIBarButtonItem itemWithTarget:self Action:@selector(toPop) image:@"d_nu" highImage:@"1"];
 }
 
 -(void)toFriend
