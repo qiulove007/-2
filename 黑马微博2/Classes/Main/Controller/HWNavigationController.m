@@ -24,6 +24,7 @@
     // Dispose of any resources that can be recreated.
 }
 
+
 -(void)pushViewController:(UIViewController *)viewController animated:(BOOL)animated
 {//需要判断不是根视图控制器的才添加左右按钮
     
@@ -32,24 +33,16 @@
     {
         viewController.hidesBottomBarWhenPushed=YES;//当push到下一个页面时隐藏tabbar
         
-        UIButton* back=[UIButton buttonWithType:UIButtonTypeCustom];//创建一个自定义的按钮
-        [back addTarget:self action:@selector(toBack:) forControlEvents:UIControlEventTouchUpInside];
-        [back setBackgroundImage:[UIImage imageNamed:@"1"] forState:UIControlStateNormal];
-        [back setBackgroundImage:[UIImage imageNamed:@"3"] forState:UIControlStateHighlighted];
-        back.size = back.currentBackgroundImage.size;//如果没有正常显示，请查看有没有设置大小
-        viewController.navigationItem.leftBarButtonItem=[[UIBarButtonItem alloc] initWithCustomView:back];
+        viewController.navigationItem.leftBarButtonItem=[HWItemTool itemWithAction:@selector(toBack:) image:@"1" highImage:@"3"];
         
-        UIButton* home=[UIButton buttonWithType:UIButtonTypeCustom];//创建一个自定义的按钮
-        [home addTarget:self action:@selector(toHome:) forControlEvents:UIControlEventTouchUpInside];
-        [home setBackgroundImage:[UIImage imageNamed:@"2"] forState:UIControlStateNormal];
-        [home setBackgroundImage:[UIImage imageNamed:@"4"] forState:UIControlStateHighlighted];
-        home.size=home.currentBackgroundImage.size;//如果没有正常显示，请查看有没有设置大小
-        viewController.navigationItem.rightBarButtonItem=[[UIBarButtonItem alloc]initWithCustomView:home];
+        viewController.navigationItem.rightBarButtonItem=[HWItemTool itemWithAction:@selector(toHome::) image:@"2" highImage:@"4"];
     }
     
     [super pushViewController:viewController animated:animated];
     
 }
+
+
 
 -(void)toBack:(id)sender
 {

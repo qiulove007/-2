@@ -17,11 +17,19 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    // Uncomment the following line to preserve selection between presentations.
-    // self.clearsSelectionOnViewWillAppear = NO;
+    self.navigationItem.leftBarButtonItem = [HWItemTool itemWithAction:@selector(toFriend) image:@"5" highImage:@"6"];
     
-    // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-    // self.navigationItem.rightBarButtonItem = self.editButtonItem;
+    self.navigationItem.rightBarButtonItem = [HWItemTool itemWithAction:@selector(toPop) image:@"d_nu" highImage:@"1"];
+}
+
+-(void)toFriend
+{
+    
+}
+
+-(void)toPop
+{
+    
 }
 
 - (void)didReceiveMemoryWarning {
