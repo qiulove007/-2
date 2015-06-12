@@ -19,10 +19,10 @@
  *
  *  @return 创建完的ITEM
  */
-+(UIBarButtonItem*)itemWithAction:(SEL)action image:(NSString*)image highImage:(NSString*)highImage
++(UIBarButtonItem*)itemWithTarget:(id) target Action:(SEL)action image:(NSString*)image highImage:(NSString*)highImage
 {
     UIButton* btn=[UIButton buttonWithType:UIButtonTypeCustom];//创建一个自定义的按钮
-    [btn addTarget:self action:action forControlEvents:UIControlEventTouchUpInside];
+    [btn addTarget:target action:action forControlEvents:UIControlEventTouchUpInside];
     [btn setBackgroundImage:[UIImage imageNamed:image] forState:UIControlStateNormal];
     [btn setBackgroundImage:[UIImage imageNamed:highImage] forState:UIControlStateHighlighted];
     btn.size = btn.currentBackgroundImage.size;//如果没有正常显示，请查看有没有设置大小

@@ -33,9 +33,9 @@
     {
         viewController.hidesBottomBarWhenPushed=YES;//当push到下一个页面时隐藏tabbar
         
-        viewController.navigationItem.leftBarButtonItem=[HWItemTool itemWithAction:@selector(toBack:) image:@"1" highImage:@"3"];
+        viewController.navigationItem.leftBarButtonItem=[HWItemTool itemWithTarget:self Action:@selector(toBack:) image:@"1" highImage:@"3"];
         
-        viewController.navigationItem.rightBarButtonItem=[HWItemTool itemWithAction:@selector(toHome::) image:@"2" highImage:@"4"];
+        viewController.navigationItem.rightBarButtonItem=[HWItemTool itemWithTarget:self Action:@selector(toHome::) image:@"2" highImage:@"4"];
     }
     
     [super pushViewController:viewController animated:animated];

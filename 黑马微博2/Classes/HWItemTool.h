@@ -13,6 +13,6 @@
  */
 @interface HWItemTool : NSObject
 
-+(UIBarButtonItem*)itemWithAction:(SEL)action image:(NSString*)image highImage:(NSString*)highImage;
++(UIBarButtonItem*)itemWithTarget:(id) target Action:(SEL)action image:(NSString*)image highImage:(NSString*)highImage;
 
 @end
