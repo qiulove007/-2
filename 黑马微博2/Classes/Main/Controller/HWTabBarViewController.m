@@ -49,7 +49,7 @@
     
     childVc.tabBarItem.image = [[UIImage imageNamed:image] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
     childVc.tabBarItem.selectedImage = [[UIImage imageNamed:selectedImage] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
-    childVc.view.backgroundColor = RandomColor;
+    //childVc.view.backgroundColor = RandomColor;
     //设置未选中文字的样式
     NSMutableDictionary* textAttrs=[NSMutableDictionary dictionary];
     textAttrs[NSForegroundColorAttributeName] = [UIColor blackColor];
