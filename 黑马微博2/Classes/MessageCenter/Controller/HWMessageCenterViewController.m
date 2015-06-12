@@ -20,6 +20,18 @@
     
     self.navigationItem.rightBarButtonItem=[[UIBarButtonItem alloc] initWithTitle:@"写私信" style:UIBarButtonItemStylePlain target:self action:@selector(composeMsg)];
     //style在IOS7之后显示没有效果
+    
+    //设置按钮不能点击
+    //self.navigationItem.rightBarButtonItem.enabled=NO;
+}
+
+//视图即将显示
+-(void)viewWillAppear:(BOOL)animated
+{
+    [super viewWillAppear:animated];
+    
+    //设置按钮不能点击，并且可以使用disable下的主题
+    self.navigationItem.rightBarButtonItem.enabled=NO;
 }
 
 -(void)composeMsg

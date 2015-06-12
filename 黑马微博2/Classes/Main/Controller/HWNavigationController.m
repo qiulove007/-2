@@ -25,7 +25,11 @@
     textAttrs[NSFontAttributeName] = [UIFont systemFontOfSize:13];//设置系统13号字
     [item setTitleTextAttributes:textAttrs forState:UIControlStateNormal];
     
-    
+    //设置不可用状态
+    NSMutableDictionary* disTextAttrs=[NSMutableDictionary dictionary];
+    disTextAttrs[NSForegroundColorAttributeName] = [UIColor lightGrayColor];
+    disTextAttrs[NSFontAttributeName] = [UIFont systemFontOfSize:13];//设置系统13号字
+    [item setTitleTextAttributes:disTextAttrs forState:UIControlStateDisabled];
 }
 
 - (void)viewDidLoad {
