@@ -17,6 +17,13 @@
 
 #endif
 
+//使用此种方式，可以在测试阶段开放打印功能，而在发布阶段屏蔽打印功能
+#ifdef DEBUG //处于测试阶段
+#define HWLog(...) NSLog(__VA_ARGS__)
+#else//处于发布阶段
+#define HWLog(...)
+#endif
+
 // Include any system framework and library headers here that should be included in all compilation units.
 // You will also need to set the Prefix Header build setting of one or more of your targets to reference this file.
 
