@@ -7,6 +7,7 @@
 //
 
 #import "HWProfileViewController.h"
+#import "HWTest2ViewController.h"
 
 @interface HWProfileViewController ()
 
@@ -17,11 +18,14 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    // Uncomment the following line to preserve selection between presentations.
-    // self.clearsSelectionOnViewWillAppear = NO;
-    
-    // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-    // self.navigationItem.rightBarButtonItem = self.editButtonItem;
+    self.navigationItem.rightBarButtonItem = [UIBarButtonItem itemWithTarget:self Action:@selector(setting) image:@"d_nu" highImage:@"1"];
+}
+
+-(void) setting
+{
+    HWTest2ViewController* t2=[[HWTest2ViewController alloc]init];
+    t2.title=@"test2";
+    [self.navigationController pushViewController:t2 animated:YES];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -31,7 +35,7 @@
 
 #pragma mark - Table view data source
 
-- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
+/*- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
 #warning Potentially incomplete method implementation.
     // Return the number of sections.
     return 0;
@@ -41,7 +45,7 @@
 #warning Incomplete method implementation.
     // Return the number of rows in the section.
     return 0;
-}
+}*/
 
 /*
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
