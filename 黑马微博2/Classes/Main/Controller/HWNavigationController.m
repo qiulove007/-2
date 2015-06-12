@@ -35,7 +35,7 @@
         
         viewController.navigationItem.leftBarButtonItem=[UIBarButtonItem itemWithTarget:self Action:@selector(toBack:) image:@"1" highImage:@"3"];
         
-        viewController.navigationItem.rightBarButtonItem=[UIBarButtonItem itemWithTarget:self Action:@selector(toHome::) image:@"2" highImage:@"4"];
+        viewController.navigationItem.rightBarButtonItem=[UIBarButtonItem itemWithTarget:self Action:@selector(toHome:) image:@"2" highImage:@"4"];
     }
     
     [super pushViewController:viewController animated:animated];
