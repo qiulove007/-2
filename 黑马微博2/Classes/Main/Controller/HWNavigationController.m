@@ -14,6 +14,20 @@
 
 @implementation HWNavigationController
 
++(void) initialize
+{
+    //设置整个项目的所有item的主题样式
+    UIBarButtonItem* item=[UIBarButtonItem appearance];
+    
+    //设置普通状态,key:NS*****AttributeName
+    NSMutableDictionary* textAttrs=[NSMutableDictionary dictionary];
+    textAttrs[NSForegroundColorAttributeName] = [UIColor orangeColor];
+    textAttrs[NSFontAttributeName] = [UIFont systemFontOfSize:13];//设置系统13号字
+    [item setTitleTextAttributes:textAttrs forState:UIControlStateNormal];
+    
+    
+}
+
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
