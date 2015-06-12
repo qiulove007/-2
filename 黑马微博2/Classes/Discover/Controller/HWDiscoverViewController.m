@@ -13,20 +13,38 @@
 @end
 
 @implementation HWDiscoverViewController
-
+UITextField* searchBar;
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    // Uncomment the following line to preserve selection between presentations.
-    // self.clearsSelectionOnViewWillAppear = NO;
+    //系统的searchbar，显示有问题
+//    searchBar=[[UISearchBar alloc]init];
+//    [searchBar setScopeBarBackgroundImage:[UIImage imageNamed:@"searchbar"]];
+//    self.navigationItem.titleView = searchBar;
     
-    // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-    // self.navigationItem.rightBarButtonItem = self.editButtonItem;
+    searchBar = [[UITextField alloc]init];
+    searchBar.height=30;
+    searchBar.width=400;
+    [searchBar setBackground:[UIImage imageNamed:@"searchbar1"]];
+    
+    UIImageView* img=[[UIImageView alloc]init];
+    img.image = [UIImage imageNamed:@"fd"];
+    img.height=30;
+    img.width=30;
+    img.contentMode = UIViewContentModeCenter;
+    searchBar.leftView=img;
+    searchBar.leftViewMode = UITextFieldViewModeAlways;
+    
+    self.navigationItem.titleView=searchBar;
 }
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+-(void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event
+{
+    [searchBar resignFirstResponder];
 }
 
 #pragma mark - Table view data source
