@@ -22,18 +22,10 @@ UITextField* searchBar;
 //    [searchBar setScopeBarBackgroundImage:[UIImage imageNamed:@"searchbar"]];
 //    self.navigationItem.titleView = searchBar;
     
-    searchBar = [[UITextField alloc]init];
+    HWSearchBar* searchBar = [HWSearchBar searchBar];
     searchBar.height=30;
     searchBar.width=400;
-    [searchBar setBackground:[UIImage imageNamed:@"searchbar1"]];
     
-    UIImageView* img=[[UIImageView alloc]init];
-    img.image = [UIImage imageNamed:@"fd"];
-    img.height=30;
-    img.width=30;
-    img.contentMode = UIViewContentModeCenter;
-    searchBar.leftView=img;
-    searchBar.leftViewMode = UITextFieldViewModeAlways;
     
     self.navigationItem.titleView=searchBar;
 }

@@ -14,7 +14,7 @@
 #import <Foundation/Foundation.h>
 #import "HWUIView+Extension.h"
 #import "HWUIBarButtonItem+Extension.h"
-
+#import "HWSearchBar.h"
 #endif
 
 //使用此种方式，可以在测试阶段开放打印功能，而在发布阶段屏蔽打印功能
