@@ -8,6 +8,7 @@
 
 #import "HWTabBarViewController.h"
 #import "HWNavigationController.h"
+#import "HWTabBar.h"
 
 @interface HWTabBarViewController ()
 
@@ -26,20 +27,39 @@
     HWMessageCenterViewController* msg=[[HWMessageCenterViewController alloc]init];
     [self addChildVC:msg title:@"消息" image:@"2" selectedImage:@"6"];
     
+    
+    
     HWDiscoverViewController* discover=[[HWDiscoverViewController alloc]init];
     [self addChildVC:discover title:@"发现" image:@"3" selectedImage:@"1"];
     
     HWProfileViewController* profile=[[HWProfileViewController alloc]init];
     [self addChildVC:profile title:@"我" image:@"4" selectedImage:@"2"];
     
+    
+    //更换系统自带的tabbar，使用KVC进行修改
+    [self setValue:[[HWTabBar alloc]init] forKeyPath:@"tabBar"];
+    
+    
+    
     //4.添加子控制器
     //self.viewControllers =@[home,msg,discover,profile];
 }
 
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
-}
+//- (void)viewWillAppear:(BOOL)animated
+//{
+//    [super viewWillAppear:animated];
+//    
+//    int count=self.tabBar.subviews.count;
+//    for (int i=0; i<count; i++) {
+//        UIView* child=self.tabBar.subviews[i];
+//        Class class=NSClassFromString(@"UITabBarButton");
+//        //UITabBarButton只可供IOS内部使用，所以使用这种方式去取得
+//        if([child isKindOfClass:class])
+//        {
+//            HWLog(@"这里有个UITabBarButton");
+//        }
+//    }
+//}
 
 -(void)addChildVC:(UIViewController*)childVc title:(NSString*)title image:(NSString*)image selectedImage:(NSString*)selectedImage
 {
