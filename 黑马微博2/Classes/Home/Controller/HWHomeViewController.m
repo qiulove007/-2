@@ -20,6 +20,40 @@
     self.navigationItem.leftBarButtonItem = [UIBarButtonItem itemWithTarget:self Action:@selector(toFriend) image:@"5" highImage:@"6"];
     
     self.navigationItem.rightBarButtonItem = [UIBarButtonItem itemWithTarget:self Action:@selector(toPop) image:@"d_nu" highImage:@"1"];
+    
+    
+    //添加标题按钮
+    UIButton* titleButton=[UIButton buttonWithType:UIButtonTypeCustom];
+    titleButton.width=150;
+    titleButton.height=30;
+    titleButton.backgroundColor = RandomColor;
+    
+    //设置按钮的图片和文字
+    [titleButton setTitle:@"首页" forState:UIControlStateNormal];
+    [titleButton setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
+    titleButton.titleLabel.font=[UIFont boldSystemFontOfSize:17];
+    [titleButton setImage:[UIImage imageNamed:@"listDown"] forState:UIControlStateNormal];
+    titleButton.imageEdgeInsets =UIEdgeInsetsMake(0,70, 0, 0);
+    titleButton.titleEdgeInsets = UIEdgeInsetsMake(0, 0, 0, 40);
+    
+    //监听标题点击
+    [titleButton addTarget:self action:@selector(titleClick:) forControlEvents:UIControlEventTouchUpInside];
+    
+    self.navigationItem.titleView = titleButton;//设置导航栏的标题视图为一个按钮
+}
+
+/**
+ *  点击标题
+ */
+-(void)titleClick:(UIButton*) titleButton
+{
+    HWDropDownMenu* dropdownMenu=[HWDropDownMenu menu];
+    
+    dropdownMenu.content = [[UITableView alloc]initWithFrame:CGRectMake(0,0,200,200)];
+    //显示窗口
+    [dropdownMenu showFrom:titleButton];
+    
+    
 }
 
 -(void)toFriend
