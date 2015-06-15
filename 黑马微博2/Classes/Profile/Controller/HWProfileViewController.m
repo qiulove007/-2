@@ -23,9 +23,21 @@
 
 -(void) setting
 {
-    HWTest2ViewController* t2=[[HWTest2ViewController alloc]init];
+    /*HWTest2ViewController* t2=[[HWTest2ViewController alloc]init];
     t2.title=@"test2";
-    [self.navigationController pushViewController:t2 animated:YES];
+    [self.navigationController pushViewController:t2 animated:YES];*/
+    HWDropDownMenu* dropdownMenu=[HWDropDownMenu menu];
+    
+    dropdownMenu.content = [[UITableView alloc]initWithFrame:CGRectMake(0,0,200,200)];
+    
+    UILabel* lbl=[[UILabel alloc]init];
+    lbl.text=self.navigationItem.title;
+    self.navigationItem.titleView=lbl;
+    [lbl setBackgroundColor:[UIColor redColor]];
+    lbl.height=30;
+    lbl.width=200;
+    //显示窗口
+    [dropdownMenu showFrom:lbl];
 }
 
 - (void)didReceiveMemoryWarning {
