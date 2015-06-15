@@ -13,6 +13,7 @@
 @end
 
 @implementation HWTabBar
+
 -(instancetype)initWithFrame:(CGRect)frame
 {
     self=[super initWithFrame:frame];
@@ -23,12 +24,25 @@
         [addBtn setBackgroundImage:[UIImage imageNamed:@"d_chijing"] forState:UIControlStateNormal];
         [addBtn setBackgroundImage:[UIImage imageNamed:@"d_nu"] forState:UIControlStateHighlighted];
         addBtn.size=addBtn.currentBackgroundImage.size;
-//        addBtn.centerX=self.width*0.5;
-//        addBtn.centerY=self.height*0.5;
+        
+        [addBtn addTarget:self action:@selector(addClick) forControlEvents:UIControlEventTouchUpInside];
+        
         [self addSubview:addBtn];
         self.addBtn=addBtn;
     }
     return self;
+}
+
+/**
+ *  发微博按钮点击事件
+ */
+-(void)addClick
+{
+    //通知代理
+    if([self.delegate respondsToSelector:@selector(tabBarDidClickPlusButton:)])
+    {
+        [self.delegate tabBarDidClickPlusButton:self];
+    }
 }
 
 -(void)layoutSubviews
