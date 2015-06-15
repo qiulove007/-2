@@ -10,7 +10,7 @@
 #import "HWNavigationController.h"
 #import "HWTabBar.h"
 
-@interface HWTabBarViewController ()
+@interface HWTabBarViewController ()<HWTabBarDelegate>
 
 @end
 
@@ -37,12 +37,23 @@
     
     
     //更换系统自带的tabbar，使用KVC进行修改
-    [self setValue:[[HWTabBar alloc]init] forKeyPath:@"tabBar"];
+    HWTabBar* tabbar=[[HWTabBar alloc]init];
+    tabbar.delegate=self;
+    [self setValue:tabbar forKeyPath:@"tabBar"];
     
     
     
     //4.添加子控制器
     //self.viewControllers =@[home,msg,discover,profile];
+}
+
+//实现自定义代理HWTabBarDelegate的方法
+-(void)tabBarDidClickPlusButton:(HWTabBar *)tabBar
+{
+    UIViewController* vc=[[UIViewController alloc]init];
+    vc.view.backgroundColor=[UIColor blueColor];
+    [self presentViewController:vc animated:YES completion:nil];
+    
 }
 
 //- (void)viewWillAppear:(BOOL)animated
