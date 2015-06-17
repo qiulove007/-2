@@ -27,6 +27,9 @@
 		93590AC01B2AB8200031A146 /* HWTestViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 93590AB11B2AB8200031A146 /* HWTestViewController.xib */; };
 		939DE21F1B2ABF3900FE9EB2 /* HWUIBarButtonItem+Extension.m in Sources */ = {isa = PBXBuildFile; fileRef = 939DE21E1B2ABF3900FE9EB2 /* HWUIBarButtonItem+Extension.m */; };
 		939DE2221B2B391200FE9EB2 /* HWSearchBar.m in Sources */ = {isa = PBXBuildFile; fileRef = 939DE2211B2B391200FE9EB2 /* HWSearchBar.m */; };
+		939DE2251B2DA89700FE9EB2 /* HWDropDownMenu.m in Sources */ = {isa = PBXBuildFile; fileRef = 939DE2241B2DA89700FE9EB2 /* HWDropDownMenu.m */; };
+		939DE2281B2EB42300FE9EB2 /* HWTabBar.m in Sources */ = {isa = PBXBuildFile; fileRef = 939DE2271B2EB42300FE9EB2 /* HWTabBar.m */; };
+		939DE22D1B2F03BC00FE9EB2 /* HWNewFeatrueViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 939DE22C1B2F03BC00FE9EB2 /* HWNewFeatrueViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -78,6 +81,12 @@
 		939DE21E1B2ABF3900FE9EB2 /* HWUIBarButtonItem+Extension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "HWUIBarButtonItem+Extension.m"; path = "../../HWUIBarButtonItem+Extension.m"; sourceTree = "<group>"; };
 		939DE2201B2B391200FE9EB2 /* HWSearchBar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HWSearchBar.h; sourceTree = "<group>"; };
 		939DE2211B2B391200FE9EB2 /* HWSearchBar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HWSearchBar.m; sourceTree = "<group>"; };
+		939DE2231B2DA89700FE9EB2 /* HWDropDownMenu.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HWDropDownMenu.h; sourceTree = "<group>"; };
+		939DE2241B2DA89700FE9EB2 /* HWDropDownMenu.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HWDropDownMenu.m; sourceTree = "<group>"; };
+		939DE2261B2EB42300FE9EB2 /* HWTabBar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HWTabBar.h; sourceTree = "<group>"; };
+		939DE2271B2EB42300FE9EB2 /* HWTabBar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HWTabBar.m; sourceTree = "<group>"; };
+		939DE22B1B2F03BC00FE9EB2 /* HWNewFeatrueViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HWNewFeatrueViewController.h; sourceTree = "<group>"; };
+		939DE22C1B2F03BC00FE9EB2 /* HWNewFeatrueViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HWNewFeatrueViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -159,6 +168,7 @@
 		93590A3D1B2937C70031A146 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
+				939DE2291B2F038400FE9EB2 /* NewFeature */,
 				93590A801B2AB8200031A146 /* Discover */,
 				93590A861B2AB8200031A146 /* Home */,
 				93590A8C1B2AB8200031A146 /* Main */,
@@ -284,6 +294,10 @@
 			children = (
 				939DE2201B2B391200FE9EB2 /* HWSearchBar.h */,
 				939DE2211B2B391200FE9EB2 /* HWSearchBar.m */,
+				939DE2231B2DA89700FE9EB2 /* HWDropDownMenu.h */,
+				939DE2241B2DA89700FE9EB2 /* HWDropDownMenu.m */,
+				939DE2261B2EB42300FE9EB2 /* HWTabBar.h */,
+				939DE2271B2EB42300FE9EB2 /* HWTabBar.m */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -422,6 +436,23 @@
 			path = View;
 			sourceTree = "<group>";
 		};
+		939DE2291B2F038400FE9EB2 /* NewFeature */ = {
+			isa = PBXGroup;
+			children = (
+				939DE22A1B2F038400FE9EB2 /* Controller */,
+			);
+			path = NewFeature;
+			sourceTree = "<group>";
+		};
+		939DE22A1B2F038400FE9EB2 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				939DE22B1B2F03BC00FE9EB2 /* HWNewFeatrueViewController.h */,
+				939DE22C1B2F03BC00FE9EB2 /* HWNewFeatrueViewController.m */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -524,6 +555,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				939DE2281B2EB42300FE9EB2 /* HWTabBar.m in Sources */,
 				93590AB61B2AB8200031A146 /* AppDelegate.m in Sources */,
 				93590AB71B2AB8200031A146 /* HWUIView+Extension.m in Sources */,
 				93590AB51B2AB8200031A146 /* HWHomeViewController.m in Sources */,
@@ -536,7 +568,9 @@
 				93590ABF1B2AB8200031A146 /* HWTestViewController.m in Sources */,
 				93590ABD1B2AB8200031A146 /* HWTest2ViewController.m in Sources */,
 				93590A201B29369C0031A146 /* ViewController.m in Sources */,
+				939DE2251B2DA89700FE9EB2 /* HWDropDownMenu.m in Sources */,
 				93590ABB1B2AB8200031A146 /* HWMessageCenterViewController.m in Sources */,
+				939DE22D1B2F03BC00FE9EB2 /* HWNewFeatrueViewController.m in Sources */,
 				93590ABC1B2AB8200031A146 /* HWProfileViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
