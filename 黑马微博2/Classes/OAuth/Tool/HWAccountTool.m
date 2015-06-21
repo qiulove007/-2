@@ -16,7 +16,7 @@
 //+(void)
 +(void)saveAccount:(HWAccount *)account
 {
-    account.created_time = [NSDate date];
+    
 //    //3.写入数据
 //    //[responseObject writeToFile:path atomically:YES];
 //    //3.写入数据，自定义对象的存储必须使用NSKeyedArchiver来进行，没有writeToFile.
@@ -37,5 +37,15 @@
         return nil;
     }
     return acc;
+}
++ (NSString *)getAccess_Token
+{
+    HWAccount* acc=[NSKeyedUnarchiver unarchiveObjectWithFile: [[NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES) lastObject] stringByAppendingPathComponent:@"account.data"]];
+    return acc.access_token;
+}
++(NSString*)getUid
+{
+    HWAccount* acc=[NSKeyedUnarchiver unarchiveObjectWithFile: [[NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES) lastObject] stringByAppendingPathComponent:@"account.data"]];
+    return acc.uid;
 }
 @end

@@ -22,6 +22,7 @@
     acc.access_token=dict[@"access_token"];
     acc.uid=dict[@"uid"];
     acc.expires_in=dict[@"expires_in"];
+    acc.created_time = [NSDate date];
     return acc;
 }
 /**
@@ -36,6 +37,7 @@
     [coder encodeObject:self.expires_in forKey:@"expires_in"];
     [coder encodeObject:self.uid forKey:@"uid"];
     [coder encodeObject:self.created_time forKey:@"created_time"];
+    [coder encodeObject:self.name forKey:@"name"];
 }
 
 /**
@@ -54,6 +56,7 @@
         self.uid=[coder decodeObjectForKey:@"uid"];
         self.expires_in=[coder decodeObjectForKey:@"expires_in"];
         self.created_time = [coder decodeObjectForKey:@"created_time"];
+        self.name = [coder decodeObjectForKey:@"name"];
     }
     return self;
 }

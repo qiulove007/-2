@@ -24,4 +24,7 @@
  *  @return 账号信息
  */
 +(HWAccount*) account;
+
++(NSString*) getAccess_Token;
++(NSString*) getUid;
 @end
