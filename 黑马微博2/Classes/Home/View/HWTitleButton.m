@@ -8,6 +8,8 @@
 
 #import "HWTitleButton.h"
 
+#define HWMargin 10;
+
 @implementation HWTitleButton
 
 -(id)initWithFrame:(CGRect)frame
@@ -61,11 +63,26 @@
 //    return CGRectMake(x, y, width, height);
 //}
 
+/**
+ *  设置宽高，XY的方法
+ *  如果想再系统设置完控件的尺寸后，再做修改，一般都是在setFrame中进行设置
+ *
+ *  @param frame 尺寸
+ */
+-(void)setFrame:(CGRect)frame
+{
+    //在此处添加自定义的宽高，xy
+    frame.size.width+=HWMargin;
+    
+    
+    [super setFrame:frame];
+}
+
 -(void)layoutSubviews
 {
     [super layoutSubviews];
     self.titleLabel.x=self.imageView.x;//原本图在左，标题在右，标题放到图的原本位置
-    self.imageView.x=CGRectGetMaxX(self.titleLabel.frame);//图片放到标题的最高X
+    self.imageView.x=CGRectGetMaxX(self.titleLabel.frame)+HWMargin;//图片放到标题的最高X
 }
 
 -(void)setTitle:(NSString *)title forState:(UIControlState)state
