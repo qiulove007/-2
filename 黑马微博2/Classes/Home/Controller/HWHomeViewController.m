@@ -13,12 +13,16 @@
 #import "HWStatus.h"
 #import "HWUser.h"
 #import "HWLoadMoreFooter.h"
+#import "HWStatusCell.h"
+#import "HWStatusFrame.h"
+#import "HWStatusFrame.h"
 
 @interface HWHomeViewController ()
 /**
  *  微博数组（里面放得都是字典，一个字典就是一个微博）
  */
 @property (nonatomic,strong)NSMutableArray* statuses;
+@property(nonatomic,strong) NSMutableArray* statusFrames;
 @end
 
 @implementation HWHomeViewController
@@ -32,8 +36,21 @@
     return _statuses;
 }
 
+- (NSMutableArray*) statusFrames
+{
+    if(!_statusFrames)
+    {
+        self.statusFrames=[[NSMutableArray alloc] init];
+    }
+    return _statusFrames;
+}
+
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
+    self.tableView.backgroundColor = [UIColor grayColor];
+    CGFloat top=HWStatusCellMargin;
+    self.tableView.contentInset =UIEdgeInsetsMake(top, 0, 0, 0);
     
     //设置导航栏内容
     [self setControllerContent];
@@ -155,8 +172,9 @@
     HWAccount* acc=[HWAccountTool account];
     NSMutableDictionary* params=[NSMutableDictionary dictionary];
     params[@"access_token"]=acc.access_token;
-    HWStatus* first=[self.statuses firstObject];//取出目前最新的一条微博
-    params[@"since_id"]=first?first.idstr:@0;//since_id:指定该参数，则返回比该id大的微博信息
+    //HWStatus* first=[self.statuses firstObject];//取出目前最新的一条微博
+    HWStatusFrame* first=[self.statusFrames firstObject];
+    params[@"since_id"]=first?first.status.idstr:@0;//since_id:指定该参数，则返回比该id大的微博信息
     //参数：max_id:返回ID小于或者等于max_id的微博，默认为0；
     
     //发送请求，要求发送get请求
@@ -165,17 +183,28 @@
         //取得微博字典数组
         NSArray* dictArr  = responseObject[@"statuses"];
         NSMutableArray* newStatuses=[NSMutableArray array];
+        NSMutableArray* newStatusFrame=[NSMutableArray array];
         
         //将微博字典数组转换为微博模型数组
         for (NSDictionary* dict in dictArr) {
             [newStatuses addObject:[HWStatus statusWithDict:dict]];
         }
         
+        //将微博模型数组转成更加复杂的StatusFrame数组
+        for(HWStatus* status in newStatuses)
+        {
+            HWStatusFrame* f=[[HWStatusFrame alloc]init];
+            f.status = status;
+            [newStatusFrame addObject:f];
+        }
+        
         //将最新的微博数据，添加到总数组的最前面
         NSRange range=NSMakeRange(0, newStatuses.count);
+        NSRange rangeF=NSMakeRange(0,newStatusFrame.count);
         NSIndexSet* set=[NSIndexSet indexSetWithIndexesInRange:range];
+        NSIndexSet* setF=[NSIndexSet indexSetWithIndexesInRange:rangeF];
         [self.statuses insertObjects:newStatuses atIndexes:set];
-        
+        [self.statusFrames insertObjects:newStatusFrame atIndexes:setF];
         //刷新table
         [self.tableView reloadData];
         
@@ -235,14 +264,18 @@
     
     //发送请求，要求发送get请求
     [manager GET:@"https://api.weibo.com/2/statuses/friends_timeline.json" parameters:params success:^(AFHTTPRequestOperation *operation, id responseObject) {
-        HWLog(@"请求用户信息成功--%@",responseObject);
+        HWLog(@"请求用户信息成功--");//%@",responseObject);
         //取得微博字典数组
         NSArray* dictArr  = responseObject[@"statuses"];
         
         //将微博字典数组转换为微博模型数组
         for (NSDictionary* dict in dictArr) {
             [self.statuses addObject:[HWStatus statusWithDict:dict]];
+            HWStatusFrame* f=[[HWStatusFrame alloc]init];
+            f.status=[HWStatus statusWithDict:dict];
+            [self.statusFrames addObject:f];
         }
+
         //刷新table
         [self.tableView reloadData];
         
@@ -277,34 +310,39 @@
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
+    return self.statusFrames.count;
     return self.statuses.count;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     static NSString* ID=@"status";
-    UITableViewCell* cell=[tableView dequeueReusableCellWithIdentifier:ID];
+    //获得cell
+    HWStatusCell* cell=[HWStatusCell cellWithTableView:tableView];
+    
+    cell.statusFrame = self.statusFrames[indexPath.row];
+    
 //    if(indexPath.row<self.statuses.count)
 //    {
     
-        if(!cell)
-        {
-            cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:ID];
-        }
+//        if(!cell)
+//        {
+//            cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:ID];
+//        }
         //取出对应行的微博字典
         //NSDictionary* status=self.statuses[indexPath.row];
         //对出对应行的微博模型
-        HWStatus* status=self.statuses[indexPath.row];
-        
-        //取出这条微博的用户字典
-        HWUser* user=status.user;
-        cell.textLabel.text=user.name;
-        
-        //设置微博的主要内容
-        cell.detailTextLabel.text = status.text;
-        
-        //设置头像
-        NSString* imageURL=user.profile_name_url;
-        [cell.imageView sd_setImageWithURL:[NSURL URLWithString:imageURL] placeholderImage:[UIImage imageNamed:@"zx"]];
+//        HWStatus* status=self.statuses[indexPath.row];
+//        
+//        //取出这条微博的用户字典
+//        HWUser* user=status.user;
+//        cell.textLabel.text=user.name;
+//        
+//        //设置微博的主要内容
+//        cell.detailTextLabel.text = status.text;
+//        
+//        //设置头像
+//        NSString* imageURL=user.profile_name_url;
+//        [cell.imageView sd_setImageWithURL:[NSURL URLWithString:imageURL] placeholderImage:[UIImage imageNamed:@"zx"]];
 //    }
 //    else
 //    {
@@ -316,6 +354,12 @@
 //    }
     
     return cell;
+}
+
+-(CGFloat)tableView:(UITableView*)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    HWStatusFrame * frame=self.statusFrames[indexPath.row];
+    return frame.cellHeight;
 }
 
 /**
@@ -365,62 +409,64 @@
         }];
     }];
 }
-#pragma mark - Table view data source
-/*
-- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
-#warning Potentially incomplete method implementation.
-    // Return the number of sections.
-    return 0;
+
+-(void)scrollViewDidScroll:(UIScrollView *)scrollView
+{
+    if(self.statusFrames.count ==0 || self.tableView.tableFooterView.isHidden == NO) return;
+    
+    CGFloat offsetY=scrollView.contentOffset.y;
+    
+    CGFloat judgeOffsetY=scrollView.contentSize.height+scrollView.contentInset.bottom-scrollView.height-self.tableView.tableFooterView.height;
+    
+    if(offsetY>=judgeOffsetY)
+    {
+        self.tableView.tableFooterView.hidden=NO;
+        [self loadMoreStatus];
+    }
 }
 
-*/
-
-/*
-
-*/
-
-/*
-// Override to support conditional editing of the table view.
-- (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath {
-    // Return NO if you do not want the specified item to be editable.
-    return YES;
+-(void) loadMoreStatus
+{
+    AFHTTPRequestOperationManager* mgr=[AFHTTPRequestOperationManager manager];
+    
+    HWAccount* acc=[HWAccountTool account];
+    NSMutableDictionary* params=[NSMutableDictionary dictionary];
+    params[@"access_token"]=acc.access_token;
+    
+    HWStatusFrame* lastStatusF=[self.statusFrames lastObject];
+    if(lastStatusF)
+    {
+        long long maxID=lastStatusF.status.idstr.longLongValue-1;
+        params[@"max_id"]=@(maxID);
+    }
+    
+    [mgr GET:@"https://api.weibo.com/2/statuses/friends_timeline.json" parameters:params success:^(AFHTTPRequestOperation *operation, NSDictionary* responseObject) {
+        NSArray* dictArr  = responseObject[@"statuses"];
+        NSMutableArray* newStatuses=[NSMutableArray array];
+        NSMutableArray* newStatusFrame=[NSMutableArray array];
+        
+        //将微博字典数组转换为微博模型数组
+        for (NSDictionary* dict in dictArr) {
+            [newStatuses addObject:[HWStatus statusWithDict:dict]];
+        }
+        
+        //将微博模型数组转成更加复杂的StatusFrame数组
+        for(HWStatus* status in newStatuses)
+        {
+            HWStatusFrame* f=[[HWStatusFrame alloc]init];
+            f.status = status;
+            [newStatusFrame addObject:f];
+        }
+        
+        [self.statusFrames addObjectsFromArray:newStatusFrame];
+        
+        [self.tableView reloadData];
+        
+        self.tableView.tableFooterView.hidden =YES;
+    } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+        HWLog(@"获取数据失败：%@",error);
+        self.tableView.tableFooterView.hidden =YES;
+    }];
 }
-*/
-
-/*
-// Override to support editing the table view.
-- (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath {
-    if (editingStyle == UITableViewCellEditingStyleDelete) {
-        // Delete the row from the data source
-        [tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationFade];
-    } else if (editingStyle == UITableViewCellEditingStyleInsert) {
-        // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
-    }   
-}
-*/
-
-/*
-// Override to support rearranging the table view.
-- (void)tableView:(UITableView *)tableView moveRowAtIndexPath:(NSIndexPath *)fromIndexPath toIndexPath:(NSIndexPath *)toIndexPath {
-}
-*/
-
-/*
-// Override to support conditional rearranging of the table view.
-- (BOOL)tableView:(UITableView *)tableView canMoveRowAtIndexPath:(NSIndexPath *)indexPath {
-    // Return NO if you do not want the item to be re-orderable.
-    return YES;
-}
-*/
-
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-*/
 
 @end
