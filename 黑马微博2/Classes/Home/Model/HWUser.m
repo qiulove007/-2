@@ -13,8 +13,22 @@
 {
     HWUser* user=[[self alloc]init];
     user.idstr = dict[@"idstr"];
-    user.profile_name_url = dict[@"profile_name_url"];
+    user.profile_name_url = dict[@"profile_image_url"];
     user.name = dict[@"name"];
+    user.mbtype=dict[@"mbtype"];
+    user.mbrank=dict[@"mbrank"];
     return user;
 }
+-(void)setMbtype:(int)mbtype
+{
+    _mbtype=mbtype;
+    self.vip=mbtype>2;
+}
+//-(BOOL)isVip
+//{
+//    if(self.mbtype>2)
+//        return YES;
+//    else
+//        return NO;
+//}
 @end

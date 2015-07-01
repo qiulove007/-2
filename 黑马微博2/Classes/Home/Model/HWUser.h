@@ -22,5 +22,18 @@
  */
 @property (nonatomic,copy) NSString* profile_name_url;
 
+/**
+ *  会员类型，当type大于2的时候是会员
+ */
+@property (nonatomic,assign) int mbtype;
+/**
+ *  会员等级
+ */
+@property (nonatomic,assign) int mbrank;
+/**
+ *  获得是否是vip
+ */
+@property (nonatomic,assign,getter=isVip) BOOL vip;
+
 +(instancetype)userWithDict:(NSDictionary*)dict;
 @end
