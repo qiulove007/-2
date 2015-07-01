@@ -16,6 +16,18 @@
     status.idstr=dict[@"idstr"];
     status.user=[HWUser userWithDict:dict[@"user"]];
     status.text=dict[@"text"];
+    status.created_at = dict[@"created_at"];
+    status.source = dict[@"source"];
+    status.pic_urls=dict[@"pic_urls"];
+    status.reposts_count = (int)dict[@"reposts_count"];
+    status.comments_count = (int)dict[@"comments_count"];
+    status.attitudes_count = (int)dict[@"attitudes_count"];
+    //status.retweeted_status = [HWStatus statusWithDict:dict[@"retweeted_status"]];
     return status;
+}
+
+-(NSString*)created_at
+{
+    
 }
 @end
