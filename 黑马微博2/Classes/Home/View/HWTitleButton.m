@@ -26,7 +26,7 @@
         
         
         //测试代码
-        self.backgroundColor = RandomColor;
+        self.backgroundColor = UIColorFromRGB(0xeeeeee);
     }
     return self;
 }
