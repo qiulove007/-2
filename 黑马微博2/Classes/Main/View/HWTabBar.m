@@ -56,7 +56,7 @@
     //设置其他tabbarButton的位置和尺寸
     CGFloat tabbarWidth=self.width/5;//拜访5个项目，每个项目的宽度
     CGFloat tabbarX=0;//设置初始位置
-    int count=self.subviews.count;
+    int count=(int)self.subviews.count;
     for (int i=0; i<count; i++) {
         UIView* child=self.subviews[i];
         Class class=NSClassFromString(@"UITabBarButton");
