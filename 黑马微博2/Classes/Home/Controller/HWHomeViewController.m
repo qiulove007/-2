@@ -62,7 +62,7 @@
     [self setNewStatus];
     
     //集成刷新控件
-    [self setupRefresh];
+    //[self setupRefresh];
     
     //集成上拉刷新控件
     [self setupUpRefresh];
