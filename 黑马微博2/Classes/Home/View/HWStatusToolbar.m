@@ -34,7 +34,7 @@
     {
         self.btns=[NSMutableArray array];
         self.dividers=[NSMutableArray array];
-        self.backgroundColor=[UIColor orangeColor];
+        self.backgroundColor=UIColorFromRGB(0xdddeee);
         self.attitudeBtn = [self setupBtn:@"赞" icon:@"vip"];
         self.repostBtn = [self setupBtn:@"转发" icon:@"vip"];
         self.commentBtn =[self setupBtn:@"评论" icon:@"vip"];
@@ -42,7 +42,9 @@
         
         //HWLog(@"x:%f,y:%f,w:%f,h:%f",self.commentBtn.frame.origin.x,self.commentBtn.frame.origin.y,self.commentBtn.size.width,self.commentBtn.size.height);
         UIView* v1=[self setupDivider];
+        v1.backgroundColor = [UIColor blackColor];
         UIView* v2=[self setupDivider];
+        v2.backgroundColor=[UIColor blackColor];
         [self.dividers addObject:v1];
         [self.dividers addObject:v2];
     }
@@ -134,7 +136,8 @@
             defTitle = [defTitle stringByReplacingOccurrencesOfString:@".0" withString:@""];
         }
     }
-    
+    btn.titleLabel.textColor=[UIColor blackColor];
+    //btn.titleLabel.backgroundColor=UIColorFromRGB(0xeeeccc);
     [btn setTitle:defTitle forState:UIControlStateNormal];
     
 }
