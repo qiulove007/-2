@@ -8,6 +8,15 @@
 
 #import <Foundation/Foundation.h>
 
+typedef enum{
+    HWUserVerifiedTypeNone = -1,//没有认证
+    HWUserVerifiedTypePersonal = 0,//个人认证
+    HWUserVerifiedTypeOrgEnterprice = 2,//企业官方
+    HWUserVerifiedTypeOrgMedia = 3,//媒体官方
+    HWUserVerifiedTypeOrgWebsite=5,//网站官方
+    HWUserVerifiedTypeDaren=220//微博达人
+}HWUserVerifiedType;
+
 @interface HWUser : NSObject
 /**
  *  字符串型UID
@@ -34,6 +43,10 @@
  *  获得是否是vip
  */
 @property (nonatomic,assign,getter=isVip) BOOL vip;
+/**
+ *  认证类型
+ */
+@property (nonatomic,assign) HWUserVerifiedType verified_type;
 
 +(instancetype)userWithDict:(NSDictionary*)dict;
 @end

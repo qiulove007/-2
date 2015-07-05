@@ -15,8 +15,10 @@
     user.idstr = dict[@"idstr"];
     user.profile_name_url = dict[@"profile_image_url"];
     user.name = dict[@"name"];
-    user.mbtype=dict[@"mbtype"];
-    user.mbrank=dict[@"mbrank"];
+    user.mbtype=(int)dict[@"mbtype"];
+    user.mbrank=(int)dict[@"mbrank"];
+    
+    user.verified_type = (int)dict[@"verified_type"];
     return user;
 }
 -(void)setMbtype:(int)mbtype
