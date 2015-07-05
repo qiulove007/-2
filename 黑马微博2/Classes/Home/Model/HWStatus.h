@@ -33,7 +33,7 @@
 /**
  *  微博配图地址，
  */
-@property (nonatomic,strong) NSArray* pic_urls;
+@property (nonatomic,strong) NSMutableArray* pic_urls;
 /**
  *  转发数
  */
@@ -52,4 +52,5 @@
 @property (nonatomic,strong) HWStatus* retweeted_status;
 
 +(instancetype)statusWithDict:(NSDictionary*)dict;
+
 @end
