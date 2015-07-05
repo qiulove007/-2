@@ -10,6 +10,8 @@
 //  3.存放一个数据模型HWStatus
 
 #import <Foundation/Foundation.h>
+
+#define HWStatusCellBorderW 10;//设置边框宽度
 //昵称字体
 #define HWStatusCellNameFont [UIFont systemFontOfSize:15]
 //时间字体
@@ -28,7 +30,7 @@
 @property (nonatomic ,assign) CGRect originalViewF;//原创微博整体
 @property (nonatomic ,assign) CGRect iconViewF;//头像
 @property (nonatomic ,assign) CGRect vipViewF;//会员图标
-@property (nonatomic ,assign) CGRect photoViewF;//微博配图
+@property (nonatomic ,assign) CGRect photosViewF;//微博配图
 @property (nonatomic ,assign) CGRect nameLabelF;//昵称
 @property (nonatomic ,assign) CGRect timeLabelF;//发表时间
 @property (nonatomic ,assign) CGRect sourceLabelF;//来源于
@@ -37,7 +39,7 @@
 /*转发微博*/
 @property (nonatomic,assign) CGRect retweetViewF;//转发微博整体
 @property (nonatomic,assign) CGRect retweetContentLabelF;//转发正文+昵称
-@property (nonatomic,assign) CGRect retweetPhotoViewF;//转发配图
+@property (nonatomic,assign) CGRect retweetPhotosViewF;//转发配图
 
 //底部工具条
 @property (nonatomic,assign) CGRect toolbarF;//底部工具条

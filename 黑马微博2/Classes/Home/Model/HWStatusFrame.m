@@ -9,9 +9,7 @@
 #import "HWStatusFrame.h"
 #import "HWStatus.h"
 #import "HWUser.h"
-#define HWStatusCellBorderW 10;//设置边框宽度
-
-
+#import "HWStatusPhotosView.h"
 
 @implementation HWStatusFrame
 -(void) setStatus:(HWStatus *)status
@@ -59,20 +57,24 @@
     CGFloat maxW=[UIScreen mainScreen].bounds.size.width - 2*HWStatusCellBorderW;
     CGSize contentSize=[self sizeWithText:status.text font:HWStatusCellContentFont maxW:maxW];
     self.contentLabelF = CGRectMake(contentX, contentY, contentSize.width, contentSize.height);
+    
+    CGFloat toolbarY=0;//工具条Y
     //微博配图
     CGFloat originalH = 0;
     if(status.pic_urls.count)
     {
-        CGFloat photoWH=100;//图片高度宽度
+        CGSize photoSize=[HWStatusPhotosView photosSizeWithCount:status.pic_urls.count];//图片高度宽度
         CGFloat photoX=contentX;
         CGFloat photoY=CGRectGetMaxY(self.contentLabelF)+HWStatusCellBorderW;
-        self.photoViewF = CGRectMake(photoX, photoY, photoWH, photoWH);
+        self.photosViewF = CGRectMake(photoX, photoY, photoSize.width, photoSize.height);
         
-        originalH = CGRectGetMaxY(self.photoViewF)+HWStatusCellBorderW;
+        originalH = CGRectGetMaxY(self.photosViewF)+HWStatusCellBorderW;
+        HWLog(@"%d:w.%f h.%f",status.pic_urls.count,photoSize.width,photoSize.height);
     }
     else
     {
         originalH = CGRectGetMaxY(self.contentLabelF)+HWStatusCellBorderW;
+        //toolbarY = CGRectGetMaxY(self.contentLabelF)+100;
     }
     
     //原创微博整体
@@ -82,7 +84,7 @@
     //CGFloat originalH=CGRectGetMaxY(self.contentLabelF)+50;
     self.originalViewF = CGRectMake(originalX, originalY, originalW, originalH);
     
-    CGFloat toolbarY=0;//工具条Y
+    
     //被转发微博
     if(status.retweeted_status)
     {
@@ -100,11 +102,12 @@
         CGFloat retweetH=0;
         if(retweeted_status.pic_urls.count)
         {
-            CGFloat photoWH=100;//图片高度宽度
+            CGSize retweeted_photoSize=[HWStatusPhotosView photosSizeWithCount:retweeted_status.pic_urls.count];//图片高度宽度
             CGFloat photoX=retweetContentX;
             CGFloat photoY=CGRectGetMaxY(self.retweetContentLabelF)+HWStatusCellBorderW;
-            self.retweetPhotoViewF = CGRectMake(photoX, photoY, photoWH, photoWH);
-            retweetH=CGRectGetMaxY(self.retweetPhotoViewF)+HWStatusCellBorderW;
+            self.retweetPhotosViewF = CGRectMake(photoX, photoY, retweeted_photoSize.width, retweeted_photoSize.height);
+            retweetH=CGRectGetMaxY(self.retweetPhotosViewF)+HWStatusCellBorderW;
+            //HWLog(@"re:%d:w.%f h.%f",retweeted_status.pic_urls.count,retweeted_photoSize.width,retweeted_photoSize.height);
         }
         else
         {
@@ -124,6 +127,8 @@
         toolbarY = CGRectGetMaxY(self.originalViewF);
     }
     
+    //HWLog(@"toolbar:%f ",)
+    
     //工具条
     CGFloat toolbarX=0;
     CGFloat toolbarH=35;
@@ -132,6 +137,7 @@
     
     self.cellHeight = CGRectGetMaxY(self.toolbarF)+HWStatusCellMargin;
 }
+
 
 -(CGSize) sizeWithText:(NSString*)text font:(UIFont*)font maxW:(CGFloat)maxW
 {
