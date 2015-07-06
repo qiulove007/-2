@@ -49,12 +49,14 @@
 -(void)setSource:(NSString *)source
 {
     
-    
+    if(![source isEqualToString:@""])
+    {
     NSRange range;
     range.location = [source rangeOfString:@">"].location+1;//得到第一个>的下标
     range.length= [source rangeOfString:@"</"].location - range.location;//得到<a>与</a>之间内容的长度
-    HWLog(@"location:%d,length:%d",range.location,range.length);
+    //HWLog(@"location:%d,length:%d",range.location,range.length);
     _source=[NSString stringWithFormat:@"来自%@",[source substringWithRange:range] ];
+    }
 }
 
 
