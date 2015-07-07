@@ -9,6 +9,7 @@
 #import "HWTabBarViewController.h"
 #import "HWNavigationController.h"
 #import "HWTabBar.h"
+#import "HWComposeViewController.h"
 
 @interface HWTabBarViewController ()<HWTabBarDelegate>
 
@@ -48,11 +49,18 @@
 }
 
 //实现自定义代理HWTabBarDelegate的方法
+/**
+ *  点击发微博的操作。
+ *
+ *  @param tabBar 自定义tabBar
+ */
 -(void)tabBarDidClickPlusButton:(HWTabBar *)tabBar
 {
-    UIViewController* vc=[[UIViewController alloc]init];
-    vc.view.backgroundColor=[UIColor blueColor];
-    [self presentViewController:vc animated:YES completion:nil];
+    
+    HWComposeViewController* cc=[[HWComposeViewController alloc]init];
+    HWNavigationController* nav=[[HWNavigationController alloc]initWithRootViewController:cc];
+    //创建一个带有导航栏的控制器窗口
+    [self presentViewController:nav animated:YES completion:nil];
     
 }
 
