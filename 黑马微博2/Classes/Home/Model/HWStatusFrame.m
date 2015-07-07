@@ -69,7 +69,7 @@
         self.photosViewF = CGRectMake(photoX, photoY, photoSize.width, photoSize.height);
         
         originalH = CGRectGetMaxY(self.photosViewF)+HWStatusCellBorderW;
-        HWLog(@"%d:w.%f h.%f",status.pic_urls.count,photoSize.width,photoSize.height);
+       // HWLog(@"%d:w.%f h.%f",status.pic_urls.count,photoSize.width,photoSize.height);
     }
     else
     {
